@@ -38,5 +38,7 @@ view model =
   div []
     [ input [ placeholder "Text to reverse", value model.message, onInput Change ] []
     , div [] [ text (String.reverse model.message) ]
+    , div [] [ text ("Message length = " ++ String.fromInt(String.length model.message)) ]
+    -- write the sequence of all events one by row
     , div [] [ ul [] (List.map (\x -> li [] [text (x ++ "\n")]) model.events) ]
     ]
